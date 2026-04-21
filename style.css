@@ -256,8 +256,41 @@ section + section {
   border-top: none;
 }
 
+.hero-layout {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: clamp(var(--space-8), 5vw, var(--space-16));
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .hero-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
 .hero-content {
   max-width: 680px;
+}
+
+.hero-photo {
+  width: 100%;
+  padding-top: var(--space-8);
+}
+
+.hero-photo img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+  filter: grayscale(0.15);
+}
+
+@media (max-width: 768px) {
+  .hero-photo {
+    width: 200px;
+    order: -1;
+  }
 }
 
 .hero-title {
