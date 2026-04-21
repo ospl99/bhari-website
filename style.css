@@ -133,6 +133,7 @@
   right: 0;
   z-index: 100;
   padding: var(--space-4) 0;
+  background: linear-gradient(to bottom, oklch(from var(--color-bg) l c h / 0.7), transparent);
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -192,6 +193,11 @@
   display: none;
   color: var(--color-text);
   padding: var(--space-2);
+}
+
+/* Mobile menu - hidden by default on all screens */
+.nav__mobile-menu {
+  display: none;
 }
 
 /* ============================================
@@ -752,9 +758,7 @@
     display: block;
   }
 
-  /* Mobile menu overlay */
   .nav__mobile-menu {
-    display: none;
     position: fixed;
     inset: 0;
     z-index: 99;
@@ -763,6 +767,7 @@
     align-items: center;
     justify-content: center;
     gap: var(--space-8);
+    display: none;
   }
 
   .nav__mobile-menu.active {
